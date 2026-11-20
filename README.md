@@ -1,4 +1,4 @@
-# OS Resource Manager Simulator 🖥️⚡💾
+# OS Resource Manager Simulator
 
 An enterprise-grade, interactive **Operating System Resource Manager Simulator** that comprehensively demonstrates how modern operating systems manage CPU execution, dynamic contiguous memory partitions, process lifecycles, and disk arm head movements.
 
@@ -6,7 +6,7 @@ Built with **Python**, **Streamlit**, **Matplotlib**, and native **Bash** shell 
 
 ---
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 ```mermaid
 graph TD
@@ -42,9 +42,9 @@ graph TD
 
 ---
 
-## ✨ Features
+##  Features
 
-### 1. ⚡ CPU Scheduling Engine
+### 1.  CPU Scheduling Engine
 - **Supported Algorithms**:
   - **FCFS (First-Come, First-Served)**: Non-preemptive scheduling strictly prioritized by arrival time. Handles CPU idle intervals cleanly.
   - **SJF (Shortest Job First)**: Supports both **Non-Preemptive SJF** and **Preemptive SJF (SRTF - Shortest Remaining Time First)**.
@@ -58,7 +58,7 @@ graph TD
   - **System Throughput**: Completed processes per unit time.
 - **Visuals**: Matplotlib Gantt Chart with idle interval tracking and per-process color tagging.
 
-### 2. 💾 Contiguous Memory Allocation (MMU)
+### 2.  Contiguous Memory Allocation (MMU)
 - **Supported Placement Policies**:
   - **First Fit**: Allocates memory in the first available hole of sufficient size. Fastest search time.
   - **Best Fit**: Scans all free holes to find the tightest match ($\ge \text{size}$), minimizing immediate leftover fragment.
@@ -71,7 +71,7 @@ graph TD
   - **External Fragmentation Index**: Tracks unusable free memory due to partition fragmentation.
 - **Visuals**: Dynamic physical RAM address map showing hex base/end addresses and process boundaries.
 
-### 3. 📋 Process Management & Lifecycle (PCB)
+### 3.Process Management & Lifecycle (PCB)
 - **State Machine**:
   - Transitions: `NEW` $\to$ `READY` $\to$ `RUNNING` $\to$ `WAITING` (Paused) $\to$ `TERMINATED`.
 - **Process Control Block (PCB)** fields:
@@ -81,7 +81,7 @@ graph TD
   - **Pause / Resume**: Transition processes between `READY`/`RUNNING` and `WAITING` states.
   - **Terminate**: Explicitly terminate processes and automatically free/coalesce allocated memory.
 
-### 4. 💽 Disk Scheduling (FCFS & SSTF)
+### 4.  Disk Scheduling (FCFS & SSTF)
 - **Algorithms**:
   - **FCFS**: Services cylinder requests in exact order of arrival.
   - **SSTF (Shortest Seek Time First)**: Selects pending request closest to the current read/write arm position.
@@ -89,7 +89,7 @@ graph TD
 - **Metrics**: Total head movements (seek count), average seek distance, seek efficiency gain percentage.
 - **Visuals**: Step-by-step cylinder movement trajectory chart with track markers and downward sequence steps.
 
-### 5. 💻 Interactive Bash / Unix Shell Terminal
+### 5.  Interactive Bash / Unix Shell Terminal
 - Integrated command prompt that interprets standard Unix/Bash syntax:
   - `ps`: View process table and PCB states.
   - `top` / `htop`: Live system load, memory utilization, and active task summary.
@@ -102,14 +102,14 @@ graph TD
   - `compact`: Trigger memory compaction.
   - `sysinfo` / `uname -a`: Host system information.
 
-### 6. 📈 Analytical Reports & Data Exports
+### 6. Analytical Reports & Data Exports
 - Automated generation of Markdown performance reports.
 - CSV export for process execution statistics ($AT, BT, CT, TAT, WT, RT$).
 - Comparative benchmark bar charts evaluating FCFS, SJF, and Round Robin on identical workloads.
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 | Layer | Technology | Purpose |
 |---|---|---|
@@ -120,7 +120,7 @@ graph TD
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Installation
 Clone or navigate to the project directory and install the required dependencies:
@@ -157,7 +157,7 @@ bash scripts/run_benchmark.sh
 
 ---
 
-## 📂 Project Directory Structure
+## Project Directory Structure
 
 ```
 capstone os/
@@ -185,7 +185,7 @@ capstone os/
 
 ---
 
-## 📊 Sample Visualizations
+##  Sample Visualizations
 
 - **CPU Scheduling Gantt Chart**: Color-coded execution intervals with timeline ticks and idle state recognition.
 - **RAM Partition Map**: Displays physical address boundaries (`0x0000` to `0x0400`), reserved OS kernel space, allocated process segments, and free holes.
@@ -193,7 +193,7 @@ capstone os/
 
 ---
 
-## 🎓 Educational Concepts Covered
+##  Educational Concepts Covered
 1. **CPU Dispatching**: Ready queue management, context switching overheads, time quanta selection, Convoy Effect in FCFS, starvation avoidance.
 2. **Memory Fragmentation**: Internal vs. External fragmentation, dynamic partitioning trade-offs (First Fit vs Best Fit vs Worst Fit), memory compaction overhead.
 3. **I/O Storage Subsystems**: Disk platter mechanics, rotational delay vs seek latency, disk arm starvation in SSTF.
