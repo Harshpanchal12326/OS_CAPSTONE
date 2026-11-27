@@ -122,27 +122,33 @@ graph TD
 
 ##  Getting Started
 
-### 1. Installation
-Clone or navigate to the project directory and install the required dependencies:
+### 1. One-Command Quick Start (Recommended)
+Simply run `main.py` — it automatically verifies and installs missing requirements from `requirements.txt` via pip, then immediately starts the Streamlit dashboard:
+```bash
+py main.py
+```
+*(Or `python main.py`)*
+
+### 2. Manual Installation & Launch
 ```bash
 pip install -r requirements.txt
-```
-
-*(Or individually: `pip install streamlit matplotlib pandas numpy`)*
-
-### 2. Launch the Streamlit Dashboard
-```bash
 streamlit run app.py
 ```
 Open your browser at `http://localhost:8501`.
 
-### 3. Run Automated Tests
+### 3. Zero-Dependency Standalone Mode (No pip installs needed)
+```bash
+py main.py --web    # Starts standalone Web UI on http://localhost:8080
+py main.py --cli    # Starts interactive Terminal CLI
+```
+
+### 4. Run Automated Tests
 Execute the comprehensive unit test suite:
 ```bash
 python -m unittest tests/test_simulation.py
 ```
 
-### 4. Execute Bash Scripts
+### 5. Execute Bash Scripts
 If running on Linux, macOS, or Windows with Git Bash / WSL:
 ```bash
 # Display system telemetry
@@ -161,6 +167,7 @@ bash scripts/run_benchmark.sh
 
 ```
 capstone os/
+├── main.py                    # One-command launcher (auto-installs requirements & runs app)
 ├── app.py                     # Streamlit main entry point & dashboard
 ├── requirements.txt           # Python package dependencies
 ├── README.md                  # Documentation and architecture guide
